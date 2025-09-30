@@ -1,0 +1,46 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1759264790
+world.tscn::PackedScene::1370983491702506872::1759264650::0::1::::<><><>0<>0<><>::uid://dmsgw1ch1gxvo::::res://prefabs/player/player.tscn<>uid://bjgawsmam7kcf::::res://settings/score_label.tscn<>uid://o88gwie5mrv6::::res://settings/world_time.tscn<>uid://btoau0jo1i6g6::::res://prefabs/The chese/the_chese.tscn<>uid://dn6hb224v51dh::::res://prefabs/shop/shop.tscn<>uid://bxj6lcj8y4u2w::::res://assets/fence.png<>uid://desxls3s8pnnv::::res://prefabs/ai-spawner/ai_spawner.tscn
+::res://assets/::1759249476
+ak.png::CompressedTexture2D::2101413869810585278::1759190992::1759191028::1::::<><><>0<>0<>3ff324944788fb2432e6690de37c1e13<>res://.godot/imported/ak.png-3c65bfa7eae24f574cb40191feb885a7.s3tc.ctex::
+chese.png::CompressedTexture2D::3901914068989047555::1759191947::1759192016::1::::<><><>0<>0<>df5bee8e8d59b3b6ccd65b6258b885c6<>res://.godot/imported/chese.png-69c32fb6398848b304cc205911a518e1.s3tc.ctex::
+fence.png::CompressedTexture2D::4021245478145643076::1759249443::1759249476::1::::<><><>0<>0<>a7bc33739d630334a08ef0cc885edb07<>res://.godot/imported/fence.png-9d8de4d7918de1bd42f23f664d99ae7a.s3tc.ctex::
+pistol.png::CompressedTexture2D::4190343469461188797::1759189546::1759189550::1::::<><><>0<>0<>4441826df6fc1a93aa83cf0c536e1896<>res://.godot/imported/pistol.png-25ad999fb244d6e6522163977fe47a51.s3tc.ctex::
+rocket launcher.png::CompressedTexture2D::115109169072934789::1759159095::1759159117::1::::<><><>0<>0<>94314da80b803b4251282edacde3bc80<>res://.godot/imported/rocket launcher.png-3320095af6b6d5b32b328a70d3d55529.s3tc.ctex::
+::res://prefabs/::1759249104
+healthbar.tscn::PackedScene::3361668525141185800::1759246710::0::1::::<><><>0<>0<><>::
+::res://prefabs/ai/::1759264790
+basic-mouse.tscn::PackedScene::4956594457923990343::1759253792::0::1::::<><><>0<>0<><>::uid://b07fnm6ct7j25::::res://prefabs/ai/enemy.gd<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn<>uid://d1hnotoinb77p::::res://prefabs/ai/mouse.png
+enemy.gd::GDScript::4207529341345088392::1759257839::0::1::::<>CharacterBody3D<><>0<>0<><>::
+football-mouse.png::CompressedTexture2D::3788720862803571237::1759253835::1759253905::1::::<><><>0<>0<>7daf7aaa423e32d822be4c8f7d737f8a<>res://.godot/imported/football-mouse.png-216937bf1b20b46688fae020ba2ee7bb.s3tc.ctex::
+footballmouse.tscn::PackedScene::2786811292519083487::1759254036::0::1::::<><><>0<>0<><>::uid://b07fnm6ct7j25::::res://prefabs/ai/enemy.gd<>uid://bt8jxdahp1fk4::::res://prefabs/ai/football-mouse.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
+king-mouse.png::CompressedTexture2D::8661008345214306683::1759253832::1759264835::1::::<><><>0<>0<>24b9fc31b18f579db8564bcf98c85d91<>res://.godot/imported/king-mouse.png-e93c68af45603a9c48e0c3035cce9360.s3tc.ctex::
+mouse.png::CompressedTexture2D::8999437971919043879::1759182324::1759182351::1::::<><><>0<>0<>07eca149dec7374f65c23988e8db024c<>res://.godot/imported/mouse.png-101b2269bbee8ce4620db9a87729398e.s3tc.ctex::
+::res://prefabs/ai/boses/::1759264790
+mouse-king.tscn::PackedScene::6215442606848410533::1759264822::0::1::::<><><>0<>0<><>::uid://b1aejudnhucun::::res://prefabs/ai/boses/mouse_king.gd<>uid://d1hnotoinb77p::::res://prefabs/ai/mouse.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
+mouse_king.gd::GDScript::4211590614100373037::1759264822::0::1::::<>CharacterBody3D<><>0<>0<><>::
+::res://prefabs/ai-spawner/::1759264650
+ai_spawner.gd::GDScript::1160580618000099100::1759264814::0::1::::<>Node3D<><>0<>0<><>::
+ai_spawner.tscn::PackedScene::7478593349308459211::1759253867::0::1::::<><><>0<>0<><>::uid://qsguf00ijo3e::::res://prefabs/ai-spawner/ai_spawner.gd
+::res://prefabs/cat/::1759182806
+cat.gd::GDScript::2974026964321855740::1759182806::0::1::::<>CharacterBody3D<><>0<>0<><>::
+cat.png::CompressedTexture2D::4658500617491702540::1759158043::1759160135::1::::<><><>0<>0<>1917f9c5dd64e874ea3a59d2c20c45ba<>res://.godot/imported/cat.png-986a726fa8e3c95c31c9814f51d57077.s3tc.ctex::
+cat.tscn::PackedScene::232175913967304633::1759174468::0::1::::<><><>0<>0<><>::uid://bimv131dxkbgm::::res://prefabs/cat/cat.gd<>uid://b7mu3bgkbh85e::::res://prefabs/cat/cat.png
+::res://prefabs/player/::1759248804
+ak.tscn::PackedScene::8875696901569065420::1759191028::0::1::::<><><>0<>0<><>::uid://4668kg7axe43::::res://assets/ak.png
+bazoka.tscn::PackedScene::5431882237196167850::1759188794::0::1::::<><><>0<>0<><>::uid://bv03i4mo2u66::::res://assets/rocket launcher.png
+pistol.tscn::PackedScene::8952051436586136058::1759189552::0::1::::<><><>0<>0<><>::uid://b0x3lyrcw3846::::res://assets/pistol.png
+player.gd::GDScript::8540288613318936098::1759248804::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player.tscn::PackedScene::8039091932781042660::1759194340::0::1::::<><><>0<>0<><>::uid://dtw8knnuyorqo::::res://prefabs/player/player.gd<>uid://cjnikox8ufr6a::::res://prefabs/player/bazoka.tscn<>uid://d0so8kaol16ne::::res://prefabs/player/pistol.tscn<>uid://dyppowqn37luy::::res://prefabs/player/ak.tscn
+::res://prefabs/shop/::1759251763
+shop.gd::GDScript::4373976660709859465::1759194442::0::1::::<>Node3D<><>0<>0<><>::
+shop.tscn::PackedScene::8136140994679920117::1759251763::0::1::::<><><>0<>0<><>::uid://b0x3lyrcw3846::::res://assets/pistol.png<>uid://b3k10ytw5i25b::::res://prefabs/shop/shop.gd<>uid://4668kg7axe43::::res://assets/ak.png<>uid://bv03i4mo2u66::::res://assets/rocket launcher.png
+::res://prefabs/The chese/::1759248781
+the_chese.gd::GDScript::8426486054146790165::1759248781::0::1::::<>Area3D<><>0<>0<><>::
+the_chese.tscn::PackedScene::3748947044908835655::1759248200::0::1::::<><><>0<>0<><>::uid://dsb382jrt1l1v::::res://prefabs/The chese/the_chese.gd<>uid://bvud7ptfdcmfj::::res://assets/chese.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
+::res://settings/::1759262860
+Global.gd::GDScript::1145696318048830242::1759262860::0::1::::<>Node<><>0<>0<><>::
+score_label.gd::GDScript::690774607827798615::1759175618::0::1::::<>Node<><>0<>0<><>::
+score_label.tscn::PackedScene::3030546794400919857::1759174198::0::1::::<><><>0<>0<><>::uid://j3u7seyqe8jb::::res://settings/score_label.gd
+world_time.gd::GDScript::3619971311386760293::1759194595::0::1::::<>Node3D<><>0<>0<><>::
+world_time.tscn::PackedScene::1052783820435610989::1759174307::0::1::::<><><>0<>0<><>::uid://brtsns2enhbxl::::res://settings/world_time.gd
