@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmsgw1ch1gxvo"]
+
+[ext_resource type="Script" uid="uid://dtw8knnuyorqo" path="res://prefabs/player/player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://cjnikox8ufr6a" path="res://prefabs/player/cat_bazooka.tscn" id="2_rdx4y"]
+[ext_resource type="PackedScene" uid="uid://d0so8kaol16ne" path="res://prefabs/player/cat_pistol.tscn" id="2_wv1mm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
+
+[sub_resource type="Animation" id="Animation_i3pqv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Gun_pos:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.29727924, 0.5448812, -0.90271854)]
+}
+
+[sub_resource type="Animation" id="Animation_onrkg"]
+resource_name = "shoot"
+length = 0.1
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Gun_pos:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.002, 0.045, 0.094),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.29727924, 0.5448812, -0.90271854), Vector3(0.297, 0.545, -0.5), Vector3(0.29727924, 0.5448812, -0.90271854)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqtel"]
+_data = {
+&"RESET": SubResource("Animation_i3pqv"),
+&"shoot": SubResource("Animation_onrkg")
+}
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_sh265")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_4flbx")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6446972, -0.34266138)
+
+[node name="Gun_pos" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29727924, 0.5448812, -0.90271854)
+
+[node name="gun tip" type="RayCast3D" parent="Head/Gun_pos"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.067218356, 0.2191168, 0, -1.0950683)
+target_position = Vector3(0, 0, -1)
+
+[node name="pistol" parent="Head/Gun_pos" instance=ExtResource("2_wv1mm")]
+
+[node name="bazoka" parent="Head/Gun_pos" instance=ExtResource("2_rdx4y")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hqtel")
+}

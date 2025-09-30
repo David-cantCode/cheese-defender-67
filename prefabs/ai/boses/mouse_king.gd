@@ -1,0 +1,91 @@
+extends CharacterBody3D
+
+
+var speed = 1
+var max_health = 400
+var health
+var dead 
+var score_gain = 100
+var can_attack = true
+@onready var healthbar = $SubViewport/healthbar3D
+var last_knockback
+var dmg = 20
+@onready var target = get_node("../../TheChese")
+
+
+
+
+func _ready() -> void:
+	healthbar.max_value = max_health
+	health = max_health
+	
+	healthbar.value = health
+	$score_label.visible = false
+	
+
+func on_death():
+		$death_timer.start(0.5)
+		Global.score += score_gain
+		$score_label.visible = true; $score_label.text = "+ " + str(score_gain)
+		dead = true
+		$"score_label/score-ani".play("dead")
+		$SubViewport/healthbar3D.visible = false
+		
+		velocity.y += 2
+		velocity += last_knockback
+
+
+func _physics_process(delta: float) -> void:
+	if health <= 0 and !dead:	
+		on_death()
+
+	if not is_on_floor():
+		velocity.y -= 9.81 * delta
+		
+	
+	move_to_target(delta)
+		
+	move_and_slide()
+
+
+
+func hit(dmg, knockback):
+	if dead: return
+	health -= dmg
+	
+	healthbar.value = health
+	
+	$sprite/AnimationPlayer.play("hit")
+	
+	position += knockback
+	last_knockback = knockback
+	move_and_slide()
+
+
+func _on_death_timer_timeout() -> void:
+	self.queue_free()
+
+
+func move_to_target(delta):
+	if dead: return
+	
+	if target:
+		var to_target = target.global_position - global_position
+		var distance = to_target.length()
+		
+		if distance > 1.0: 
+			var direction = to_target.normalized()
+			global_translate(direction * speed * delta)
+			if !$sprite/AnimationPlayer.is_playing(): $sprite/AnimationPlayer.play("moving")
+			
+		if distance <= 1.0:
+			if target.has_method("hit"):
+				if can_attack:
+					can_attack = false
+					target.hit(dmg)
+					$atk_timer.start()
+	
+
+
+func _on_atk_timer_timeout() -> void:
+	can_attack = true

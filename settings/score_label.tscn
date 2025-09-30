@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjgawsmam7kcf"]
+
+[ext_resource type="Script" uid="uid://j3u7seyqe8jb" path="res://settings/score_label.gd" id="1_pkchj"]
+
+[node name="score-manager" type="Node3D"]
+script = ExtResource("1_pkchj")
+
+[node name="score_label" type="Label3D" parent="."]
+text = "Score: "

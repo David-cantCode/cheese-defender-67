@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://desxls3s8pnnv"]
+
+[ext_resource type="Script" uid="uid://qsguf00ijo3e" path="res://prefabs/ai-spawner/ai_spawner.gd" id="1_7og5p"]
+
+[node name="AiSpawner" type="Node3D"]
+script = ExtResource("1_7og5p")
+
+[node name="spawn_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]

@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://tsd5r4llpitk"]
+
+[ext_resource type="PackedScene" uid="uid://dmsgw1ch1gxvo" path="res://prefabs/player/player.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://ccvane4exmxgp" path="res://prefabs/ai/enemy.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://bjgawsmam7kcf" path="res://settings/score_label.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://o88gwie5mrv6" path="res://settings/world_time.tscn" id="4_aqk2v"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gv5m4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
+albedo_color = Color(0.11764706, 0.34509805, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fj7yv"]
+material = SubResource("StandardMaterial3D_f3sb7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fj7yv"]
+size = Vector3(5.8688354, 0.5135498, 4.324707)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
+
+[sub_resource type="Sky" id="Sky_tlwt5"]
+sky_material = SubResource("ProceduralSkyMaterial_fj7yv")
+
+[sub_resource type="Environment" id="Environment_fj7yv"]
+background_mode = 2
+sky = SubResource("Sky_tlwt5")
+ambient_light_color = Color(0.91163117, 0.54415274, 0.8376903, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ground" type="Node3D" parent="."]
+
+[node name="Area3D" type="CharacterBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(3.0731044, 0, 0, 0, 1, 0, 0, 0, 5.790994, 0, 0, 0)
+mesh = SubResource("PlaneMesh_gv5m4")
+skeleton = NodePath("../../ground")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D/MeshInstance3D"]
+transform = Transform3D(2.1122832, 0, 0, 0, 0.7680677, 0, 0, 0, 0.13666598, 0, 0, 0.40450957)
+mesh = SubResource("BoxMesh_fj7yv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06478882, -0.2432251, -1.6623535)
+shape = SubResource("BoxShape3D_fj7yv")
+
+[node name="Player" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.51433754, 0.51517355, 4.0989285)
+
+[node name="Enemy" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.2096281, 0.5530045, -2.5654392)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.2651434, 0.5135498, -2.2274318)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.62306166, 2.53506, -0.6797768)
+
+[node name="Enemy4" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.2096281, 0.5530045, -1.4173489)
+
+[node name="Enemy5" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.49988905, 0.010532283, 0, -0.010532283, 0.49988905, 0, 0, 0, 0.5, 1.2651434, 0.5135498, -1.0793414)
+
+[node name="Enemy6" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.51336914, 0.52035093, 0.46470296)
+
+[node name="Enemy7" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.59941554, 1.3323039, -3.3311553)
+
+[node name="Enemy8" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.2651434, 2.4282036, -0.682498)
+
+[node name="Enemy9" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.62306166, 1.5163797, 0.14429069)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fj7yv")
+
+[node name="score-label" parent="." instance=ExtResource("3_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3579352, 0.21996707, 2.8105109)
+
+[node name="world time" parent="." instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9856424, 0.18884695, 2.8447187)

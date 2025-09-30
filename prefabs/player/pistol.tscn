@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0so8kaol16ne"]
+
+[ext_resource type="Texture2D" uid="uid://b0x3lyrcw3846" path="res://assets/pistol.png" id="1_3sg0i"]
+
+[node name="Cat bazooka" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-1.093934, 0.6229925, 2.159905, 0.2814852, 2.421132, -0.5557749, -2.2302632, 0, -1.1295688, 0.297, 0, -0.903)
+shaded = true
+texture_filter = 0
+texture = ExtResource("1_3sg0i")
+
+[node name="gun tip" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21969253, 0, -1.159724)

@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://dn6hb224v51dh"]
+
+[ext_resource type="Texture2D" uid="uid://b0x3lyrcw3846" path="res://assets/pistol.png" id="1_j823p"]
+[ext_resource type="Script" uid="uid://b3k10ytw5i25b" path="res://prefabs/shop/shop.gd" id="1_sjbra"]
+[ext_resource type="Texture2D" uid="uid://4668kg7axe43" path="res://assets/ak.png" id="2_m0hfw"]
+[ext_resource type="Texture2D" uid="uid://bv03i4mo2u66" path="res://assets/rocket launcher.png" id="3_sjbra"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
+albedo_color = Color(0.4448557, 0.34304976, 0.26975346, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aqk2v"]
+material = SubResource("StandardMaterial3D_aqk2v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_036b0"]
+albedo_color = Color(0.4448557, 0.34304976, 0.26975346, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_036b0"]
+material = SubResource("StandardMaterial3D_036b0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_448sn"]
+size = Vector3(0.3835144, 0.70092773, 0.20495605)
+
+[node name="shop" type="Node3D"]
+script = ExtResource("1_sjbra")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.779409, 0, 0, 0, 0.8339859, 0, 0, 0, 0.92903996, 0, 0, 0)
+mesh = SubResource("BoxMesh_aqk2v")
+
+[node name="poles" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.23225765, 0, 0, 0, 1.3243446, 0, 0, 0, 0.26708987, -2.634461, 1.0176247, 0)
+mesh = SubResource("BoxMesh_aqk2v")
+
+[node name="poles2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.23225765, 0, 0, 0, 1.3243446, 0, 0, 0, 0.26708987, 2.2573762, 1.0176247, 0)
+mesh = SubResource("BoxMesh_aqk2v")
+
+[node name="top" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.779409, 0, 0, 0, 0.8339859, 0, 0, 0, 1.9727013, 0, 2.0779924, 0.32834435)
+mesh = SubResource("PrismMesh_036b0")
+
+[node name="money-ammnt" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -2.9311371e-08, 0, 1, 0, 8.742278e-08, 0, -0.335283, 0, 0.21226588, -0.47488785)
+text = "money: 0
+"
+
+[node name="guns" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5271756, 0)
+
+[node name="pistol" type="Area3D" parent="guns" groups=["pistol"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50323874, 0.10813713, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="guns/pistol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3308167, 0, -0.13203597)
+shaded = true
+texture_filter = 0
+texture = ExtResource("1_j823p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="guns/pistol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2832489, 0.20422363, -0.15509033)
+shape = SubResource("BoxShape3D_448sn")
+
+[node name="Label3D" type="Label3D" parent="guns/pistol"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3127443, 0.31137645, -0.15813494)
+text = "$67"
+
+[node name="ak" type="Area3D" parent="guns" groups=["ak"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08932537, 0.11731827, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="guns/ak"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3308167, 0, -0.13203597)
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_m0hfw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="guns/ak"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2832489, 0.020385742, -0.15509033)
+shape = SubResource("BoxShape3D_448sn")
+
+[node name="Label3D" type="Label3D" parent="guns/ak"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3127443, 0.31137645, -0.15813494)
+text = "$670"
+
+[node name="bazoka" type="Area3D" parent="guns" groups=["bazoka"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72221714, 0.11731827, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="guns/bazoka"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3308167, 0, -0.13203597)
+shaded = true
+texture_filter = 0
+texture = ExtResource("3_sjbra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="guns/bazoka"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2832489, 0.020385742, -0.15509033)
+shape = SubResource("BoxShape3D_448sn")
+
+[node name="Label3D" type="Label3D" parent="guns/bazoka"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3127443, 0.31137645, -0.15813494)
+text = "$6700"
+
+[node name="Label3D" type="Label3D" parent="guns"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2671227, 1.2960253, -0.672305)
+text = "Weapons:"
+
+[node name="items" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5271756, 0)

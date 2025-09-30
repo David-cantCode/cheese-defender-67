@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkp5ykrrkeub"]
+
+[ext_resource type="Script" uid="uid://bimv131dxkbgm" path="res://prefabs/cat/cat.gd" id="1_mxp2d"]
+[ext_resource type="Texture2D" uid="uid://b7mu3bgkbh85e" path="res://prefabs/cat/cat.png" id="2_jq2aj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52fj1"]
+size = Vector3(0.20440674, 0.14672852, 0.16220093)
+
+[sub_resource type="Animation" id="Animation_mxp2d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jq2aj"]
+resource_name = "spin_y"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5, 0.73333335, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.62831855, 0), Vector3(0, 3.1415927, 0), Vector3(0, 4.363323, 0), Vector3(0, -3.1415927, 0), Vector3(0, -6.1086526, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oh681"]
+resource_name = "spin_x"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.23333333, 0.5, 0.73333335, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.1415927, 0, 0), Vector3(6.1086526, 0, 0), Vector3(-3.1415927, 0, 0), Vector3(-6.1086526, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ns7g1"]
+resource_name = "spin_z"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.76666665, 1.2333333, 1.6666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -3.1415927), Vector3(0, 0, 6.2831855), Vector3(0, 0, -6.2831855)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ns7g1"]
+_data = {
+&"RESET": SubResource("Animation_mxp2d"),
+&"spin_x": SubResource("Animation_oh681"),
+&"spin_y": SubResource("Animation_jq2aj"),
+&"spin_z": SubResource("Animation_ns7g1")
+}
+
+[node name="Cat" type="CharacterBody3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mxp2d")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("2_jq2aj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.006134033, 0.012329102, 0.002456665)
+shape = SubResource("BoxShape3D_52fj1")
+
+[node name="life timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../life timer")
+libraries = {
+&"": SubResource("AnimationLibrary_ns7g1")
+}
+
+[connection signal="timeout" from="life timer" to="." method="_on_life_timer_timeout"]

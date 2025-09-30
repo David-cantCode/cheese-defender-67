@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://btoau0jo1i6g6"]
+
+[ext_resource type="Script" uid="uid://dsb382jrt1l1v" path="res://prefabs/The chese/the_chese.gd" id="1_ack2w"]
+[ext_resource type="Texture2D" uid="uid://bvud7ptfdcmfj" path="res://assets/chese.png" id="1_yyg2c"]
+[ext_resource type="PackedScene" uid="uid://bn5ogpawo41p1" path="res://prefabs/healthbar.tscn" id="2_bfagx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bfagx"]
+size = Vector3(0.6955185, 0.35536194, 0.6135502)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ack2w"]
+viewport_path = NodePath("SubViewport")
+
+[node name="TheChese" type="Area3D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ack2w")
+
+[node name="CharacterBody3D" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_yyg2c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020079106, 0.20860769, -0.022092879)
+shape = SubResource("BoxShape3D_bfagx")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="healthbar3D" parent="SubViewport" instance=ExtResource("2_bfagx")]
+value = 100.0
+show_percentage = true
+
+[node name="health bar" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.48017973, -0.187)
+billboard = 2
+texture = SubResource("ViewportTexture_ack2w")

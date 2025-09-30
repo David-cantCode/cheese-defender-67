@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://o88gwie5mrv6"]
+
+[ext_resource type="Script" uid="uid://brtsns2enhbxl" path="res://settings/world_time.gd" id="1_0aswm"]
+
+[node name="world time" type="Node3D"]
+script = ExtResource("1_0aswm")
+
+[node name="Label3D" type="Label3D" parent="."]
+text = "Time Left"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 90.0
