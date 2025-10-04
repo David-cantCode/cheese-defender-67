@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bfx7m0kkifsbn"]
 
-[ext_resource type="Script" uid="uid://b07fnm6ct7j25" path="res://prefabs/ai/enemy.gd" id="1_4qvwj"]
+[ext_resource type="Script" uid="uid://bpfvdkbk5e5oo" path="res://prefabs/ai/football-mice.gd" id="1_4qvwj"]
 [ext_resource type="Texture2D" uid="uid://bt8jxdahp1fk4" path="res://prefabs/ai/football-mouse.png" id="2_4qvwj"]
 [ext_resource type="PackedScene" uid="uid://bn5ogpawo41p1" path="res://prefabs/healthbar.tscn" id="3_yaela"]
 

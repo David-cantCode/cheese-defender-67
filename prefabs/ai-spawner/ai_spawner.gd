@@ -1,60 +1,111 @@
 extends Node3D
 
-
 @export var spawn_points: Array[NodePath] = [] # Add spawn markers in the scene
 
 var mice_basic = load("res://prefabs/ai/basic-mouse.tscn")
 var mice_footballer = load("res://prefabs/ai/footballmouse.tscn")
 var mice_king = load("res://prefabs/ai/boses/mouse-king.tscn")
+var mecha_mice = load("res://prefabs/ai/boses/mecha-mouse.tscn")
 
 @onready var spawn_timer = $spawn_timer
 
-
 var mice_spawned = 0
 var time_between_spawns
+var spawn_queue = []
+var speed_multiplier = 1.0
 
-var boss_fights = []
+signal boss_dead
 
 func _ready() -> void:
-	level_one()
-	boss_fights = [level_one_boss]
+	Global.level = 1
+	start_level(Global.level)
 
-func level_one():
-	#only spawn 10 normal mice
-	time_between_spawns = 1.5
+#*******************
+#********LEVELS
+#***********************
+func start_level(level: int) -> void:
+	spawn_queue.clear()
 	mice_spawned = 0
-	Global.mice_left = 10
+	
+	# Scale difficulty over time
+	speed_multiplier = 1.0 + (level - 1) * 0.1  # +10% speed each level
+	time_between_spawns = max(0.5, 2.0 - (level * 0.1))  # faster spawns
+	
+	# Pattern cycles between 3 types
+	match (level - 1) % 3:
+		0:
+			# Level One style
+			for i in range(10 + level): # slightly more each loop
+				spawn_queue.append(mice_basic)
+		1:
+			# Level Two style
+			for i in range(5 + level):
+				spawn_queue.append(mice_basic)
+			spawn_queue.append(mice_footballer)
+			spawn_queue.append(mice_footballer)
+		2:
+			# Level Three style
+			for i in range(5 + int(level/2)):
+				spawn_queue.append(mice_footballer)
+				spawn_queue.append(mice_basic)
+			spawn_queue.append(mice_footballer)
+			spawn_queue.append(mice_footballer)
+	
+	Global.mice_left = spawn_queue.size()
 	spawn_timer.start(time_between_spawns)
 
-func level_one_boss():
+# -------------------------
+# BOSSES
+# -------------------------
+func spawn_boss(level: int) -> void:
 	Global.boss_fight_txt = true
 	var point = get_node(spawn_points.pick_random())
-	var enemy = mice_king.instantiate()
-	enemy.global_position = point.global_position
-	add_child(enemy)
+	
+	if (level % 2) == 1:
+		# Odd levels → King
+		var boss = mice_king.instantiate()
+		boss.global_position = point.global_position
+		add_child(boss)
+		boss.boss_dead.connect(_on_boss_dead)
+	else:
+		# Even levels → Mecha
+		var boss = mecha_mice.instantiate()
+		boss.global_position = point.global_position
+		add_child(boss)
+		boss.boss_dead.connect(_on_boss_dead)
+		
+		# Extra minion
+		point = get_node(spawn_points.pick_random())
+		var footballer = mice_footballer.instantiate()
+		footballer.global_position = point.global_position
+		add_child(footballer)
 
-
-func level_two():
-	pass
-
-
-
-
+# -------------------------
+# TIMER LOOP
+# -------------------------
 func _on_spawn_timer_timeout() -> void:
 	if Global.game_over:
 		spawn_timer.stop()
 		return
-		
+	
 	if mice_spawned >= Global.mice_left:
-		boss_fights[Global.level -1 ].call()
 		spawn_timer.stop()
-		#start the boss fight
+		spawn_boss(Global.level)
 		return
-
+	
 	if spawn_points.size() > 0:
 		var point = get_node(spawn_points.pick_random())
-		var enemy = mice_basic.instantiate()
+		var enemy_scene = spawn_queue[mice_spawned]
+		var enemy = enemy_scene.instantiate()
 		enemy.global_position = point.global_position
 		add_child(enemy)
+		enemy.speed *= speed_multiplier
 	
 	mice_spawned += 1
+
+# -------------------------
+# BOSS DEATH
+# -------------------------
+func _on_boss_dead() -> void:
+	Global.level += 1
+	start_level(Global.level)

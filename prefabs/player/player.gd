@@ -17,7 +17,7 @@ var instance
 
 
 var guns = []
-var gun_dmg = [10, 25, 50]
+var gun_dmg = [10, 20, 50]
 var active_gun = 0 #point to guns array
 
 func _ready():

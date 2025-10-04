@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-var speed = 1
+var speed = 2
 var max_health = 400
 var health
 var dead 
@@ -12,7 +12,7 @@ var last_knockback
 var dmg = 20
 @onready var target = get_node("../../TheChese")
 
-
+signal boss_dead
 
 
 func _ready() -> void:
@@ -63,6 +63,7 @@ func hit(dmg, knockback):
 
 
 func _on_death_timer_timeout() -> void:
+	emit_signal("boss_dead")
 	self.queue_free()
 
 

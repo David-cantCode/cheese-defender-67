@@ -1,6 +1,6 @@
 res://world.tscn
 res://prefabs/ai-spawner/ai_spawner.gd
-res://settings/Global.gd
-res://prefabs/ai/boses/mouse-king.tscn
-res://prefabs/ai/boses/mouse_king.gd
+res://prefabs/ai/football-mice.gd
+res://prefabs/ai/footballmouse.tscn
 res://prefabs/ai/enemy.gd
+res://prefabs/shop/shop.tscn

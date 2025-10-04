@@ -1,46 +1,61 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1759264790
-world.tscn::PackedScene::1370983491702506872::1759264650::0::1::::<><><>0<>0<><>::uid://dmsgw1ch1gxvo::::res://prefabs/player/player.tscn<>uid://bjgawsmam7kcf::::res://settings/score_label.tscn<>uid://o88gwie5mrv6::::res://settings/world_time.tscn<>uid://btoau0jo1i6g6::::res://prefabs/The chese/the_chese.tscn<>uid://dn6hb224v51dh::::res://prefabs/shop/shop.tscn<>uid://bxj6lcj8y4u2w::::res://assets/fence.png<>uid://desxls3s8pnnv::::res://prefabs/ai-spawner/ai_spawner.tscn
-::res://assets/::1759249476
-ak.png::CompressedTexture2D::2101413869810585278::1759190992::1759191028::1::::<><><>0<>0<>3ff324944788fb2432e6690de37c1e13<>res://.godot/imported/ak.png-3c65bfa7eae24f574cb40191feb885a7.s3tc.ctex::
-chese.png::CompressedTexture2D::3901914068989047555::1759191947::1759192016::1::::<><><>0<>0<>df5bee8e8d59b3b6ccd65b6258b885c6<>res://.godot/imported/chese.png-69c32fb6398848b304cc205911a518e1.s3tc.ctex::
-fence.png::CompressedTexture2D::4021245478145643076::1759249443::1759249476::1::::<><><>0<>0<>a7bc33739d630334a08ef0cc885edb07<>res://.godot/imported/fence.png-9d8de4d7918de1bd42f23f664d99ae7a.s3tc.ctex::
-pistol.png::CompressedTexture2D::4190343469461188797::1759189546::1759189550::1::::<><><>0<>0<>4441826df6fc1a93aa83cf0c536e1896<>res://.godot/imported/pistol.png-25ad999fb244d6e6522163977fe47a51.s3tc.ctex::
-rocket launcher.png::CompressedTexture2D::115109169072934789::1759159095::1759159117::1::::<><><>0<>0<>94314da80b803b4251282edacde3bc80<>res://.godot/imported/rocket launcher.png-3320095af6b6d5b32b328a70d3d55529.s3tc.ctex::
-::res://prefabs/::1759249104
-healthbar.tscn::PackedScene::3361668525141185800::1759246710::0::1::::<><><>0<>0<><>::
-::res://prefabs/ai/::1759264790
-basic-mouse.tscn::PackedScene::4956594457923990343::1759253792::0::1::::<><><>0<>0<><>::uid://b07fnm6ct7j25::::res://prefabs/ai/enemy.gd<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn<>uid://d1hnotoinb77p::::res://prefabs/ai/mouse.png
-enemy.gd::GDScript::4207529341345088392::1759257839::0::1::::<>CharacterBody3D<><>0<>0<><>::
-football-mouse.png::CompressedTexture2D::3788720862803571237::1759253835::1759253905::1::::<><><>0<>0<>7daf7aaa423e32d822be4c8f7d737f8a<>res://.godot/imported/football-mouse.png-216937bf1b20b46688fae020ba2ee7bb.s3tc.ctex::
-footballmouse.tscn::PackedScene::2786811292519083487::1759254036::0::1::::<><><>0<>0<><>::uid://b07fnm6ct7j25::::res://prefabs/ai/enemy.gd<>uid://bt8jxdahp1fk4::::res://prefabs/ai/football-mouse.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
-king-mouse.png::CompressedTexture2D::8661008345214306683::1759253832::1759264835::1::::<><><>0<>0<>24b9fc31b18f579db8564bcf98c85d91<>res://.godot/imported/king-mouse.png-e93c68af45603a9c48e0c3035cce9360.s3tc.ctex::
-mouse.png::CompressedTexture2D::8999437971919043879::1759182324::1759182351::1::::<><><>0<>0<>07eca149dec7374f65c23988e8db024c<>res://.godot/imported/mouse.png-101b2269bbee8ce4620db9a87729398e.s3tc.ctex::
-::res://prefabs/ai/boses/::1759264790
-mouse-king.tscn::PackedScene::6215442606848410533::1759264822::0::1::::<><><>0<>0<><>::uid://b1aejudnhucun::::res://prefabs/ai/boses/mouse_king.gd<>uid://d1hnotoinb77p::::res://prefabs/ai/mouse.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
-mouse_king.gd::GDScript::4211590614100373037::1759264822::0::1::::<>CharacterBody3D<><>0<>0<><>::
-::res://prefabs/ai-spawner/::1759264650
-ai_spawner.gd::GDScript::1160580618000099100::1759264814::0::1::::<>Node3D<><>0<>0<><>::
-ai_spawner.tscn::PackedScene::7478593349308459211::1759253867::0::1::::<><><>0<>0<><>::uid://qsguf00ijo3e::::res://prefabs/ai-spawner/ai_spawner.gd
-::res://prefabs/cat/::1759182806
-cat.gd::GDScript::2974026964321855740::1759182806::0::1::::<>CharacterBody3D<><>0<>0<><>::
-cat.png::CompressedTexture2D::4658500617491702540::1759158043::1759160135::1::::<><><>0<>0<>1917f9c5dd64e874ea3a59d2c20c45ba<>res://.godot/imported/cat.png-986a726fa8e3c95c31c9814f51d57077.s3tc.ctex::
-cat.tscn::PackedScene::232175913967304633::1759174468::0::1::::<><><>0<>0<><>::uid://bimv131dxkbgm::::res://prefabs/cat/cat.gd<>uid://b7mu3bgkbh85e::::res://prefabs/cat/cat.png
-::res://prefabs/player/::1759248804
-ak.tscn::PackedScene::8875696901569065420::1759191028::0::1::::<><><>0<>0<><>::uid://4668kg7axe43::::res://assets/ak.png
-bazoka.tscn::PackedScene::5431882237196167850::1759188794::0::1::::<><><>0<>0<><>::uid://bv03i4mo2u66::::res://assets/rocket launcher.png
-pistol.tscn::PackedScene::8952051436586136058::1759189552::0::1::::<><><>0<>0<><>::uid://b0x3lyrcw3846::::res://assets/pistol.png
-player.gd::GDScript::8540288613318936098::1759248804::0::1::::<>CharacterBody3D<><>0<>0<><>::
-player.tscn::PackedScene::8039091932781042660::1759194340::0::1::::<><><>0<>0<><>::uid://dtw8knnuyorqo::::res://prefabs/player/player.gd<>uid://cjnikox8ufr6a::::res://prefabs/player/bazoka.tscn<>uid://d0so8kaol16ne::::res://prefabs/player/pistol.tscn<>uid://dyppowqn37luy::::res://prefabs/player/ak.tscn
-::res://prefabs/shop/::1759251763
-shop.gd::GDScript::4373976660709859465::1759194442::0::1::::<>Node3D<><>0<>0<><>::
-shop.tscn::PackedScene::8136140994679920117::1759251763::0::1::::<><><>0<>0<><>::uid://b0x3lyrcw3846::::res://assets/pistol.png<>uid://b3k10ytw5i25b::::res://prefabs/shop/shop.gd<>uid://4668kg7axe43::::res://assets/ak.png<>uid://bv03i4mo2u66::::res://assets/rocket launcher.png
-::res://prefabs/The chese/::1759248781
-the_chese.gd::GDScript::8426486054146790165::1759248781::0::1::::<>Area3D<><>0<>0<><>::
-the_chese.tscn::PackedScene::3748947044908835655::1759248200::0::1::::<><><>0<>0<><>::uid://dsb382jrt1l1v::::res://prefabs/The chese/the_chese.gd<>uid://bvud7ptfdcmfj::::res://assets/chese.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
-::res://settings/::1759262860
-Global.gd::GDScript::1145696318048830242::1759262860::0::1::::<>Node<><>0<>0<><>::
-score_label.gd::GDScript::690774607827798615::1759175618::0::1::::<>Node<><>0<>0<><>::
-score_label.tscn::PackedScene::3030546794400919857::1759174198::0::1::::<><><>0<>0<><>::uid://j3u7seyqe8jb::::res://settings/score_label.gd
-world_time.gd::GDScript::3619971311386760293::1759194595::0::1::::<>Node3D<><>0<>0<><>::
-world_time.tscn::PackedScene::1052783820435610989::1759174307::0::1::::<><><>0<>0<><>::uid://brtsns2enhbxl::::res://settings/world_time.gd
+::res://::1759604798
+README.md::TextFile::-1::1759266140::0::1::::<><><>0<>0<><>::
+world.tscn::PackedScene::1370983491702506872::1759604798::0::1::::<><><>0<>0<><>::uid://dmsgw1ch1gxvo::::res://prefabs/player/player.tscn<>uid://bjgawsmam7kcf::::res://settings/score_label.tscn<>uid://o88gwie5mrv6::::res://settings/world_time.tscn<>uid://btoau0jo1i6g6::::res://prefabs/The chese/the_chese.tscn<>uid://dn6hb224v51dh::::res://prefabs/shop/shop.tscn<>uid://bxj6lcj8y4u2w::::res://assets/fence.png<>uid://desxls3s8pnnv::::res://prefabs/ai-spawner/ai_spawner.tscn<>uid://8mwc7r3m3gt3::::res://assets/bush.png<>uid://bp7fpht8fyibh::::res://assets/moon.png
+::res://assets/::1759605270
+ak.png::CompressedTexture2D::2101413869810585278::1759266140::1759266412::1::::<><><>0<>0<>3ff324944788fb2432e6690de37c1e13<>res://.godot/imported/ak.png-3c65bfa7eae24f574cb40191feb885a7.s3tc.ctex::
+background.jpg::CompressedTexture2D::1587618345462462192::1759605269::1759605308::1::::<><><>0<>0<>749834f6679c99b58e8ac0ba0dff4c7f<>res://.godot/imported/background.jpg-3c1ee7bbff6a1283595ccc69bb1d6acd.s3tc.ctex::
+bush.png::CompressedTexture2D::2342345426830673690::1759602970::1759602990::1::::<><><>0<>0<>fd5782fdb29b186ca083d6941b48a83c<>res://.godot/imported/bush.png-be9d794f71fc1341282f91f838b46f45.s3tc.ctex::
+chese.png::CompressedTexture2D::3901914068989047555::1759266140::1759266412::1::::<><><>0<>0<>df5bee8e8d59b3b6ccd65b6258b885c6<>res://.godot/imported/chese.png-69c32fb6398848b304cc205911a518e1.s3tc.ctex::
+fence.png::CompressedTexture2D::4021245478145643076::1759266140::1759266412::1::::<><><>0<>0<>a7bc33739d630334a08ef0cc885edb07<>res://.godot/imported/fence.png-9d8de4d7918de1bd42f23f664d99ae7a.s3tc.ctex::
+health.png::CompressedTexture2D::7315192510966396886::1759602386::1759602417::1::::<><><>0<>0<>f16a234032c69efc346ae9d2e46ff60a<>res://.godot/imported/health.png-00457dc45e4c240f12819344f6504f87.s3tc.ctex::
+lightning-item.png::CompressedTexture2D::85991288922424001::1759602722::1759602729::1::::<><><>0<>0<>5b2cc082712159c57b1218b9b04f50ad<>res://.godot/imported/lightning-item.png-2d677618550ad3009cb0669b62b71f7a.s3tc.ctex::
+moon.png::CompressedTexture2D::3505644196787643577::1759604270::1759604522::1::::<><><>0<>0<>abdc301f9742d7e6dab7135b425cb469<>res://.godot/imported/moon.png-e4c6172be07b31c7ae536c1ad9030dad.s3tc.ctex::
+pistol.png::CompressedTexture2D::4190343469461188797::1759266140::1759266412::1::::<><><>0<>0<>4441826df6fc1a93aa83cf0c536e1896<>res://.godot/imported/pistol.png-25ad999fb244d6e6522163977fe47a51.s3tc.ctex::
+rocket launcher.png::CompressedTexture2D::115109169072934789::1759266140::1759266412::1::::<><><>0<>0<>94314da80b803b4251282edacde3bc80<>res://.godot/imported/rocket launcher.png-3320095af6b6d5b32b328a70d3d55529.s3tc.ctex::
+::res://cheese-defender-67/::1759266140
+README.md::TextFile::-1::1759266140::0::1::::<><><>0<>0<><>::
+::res://prefabs/::1759266140
+healthbar.tscn::PackedScene::3361668525141185800::1759266140::0::1::::<><><>0<>0<><>::
+::res://prefabs/ai/::1759602010
+basic-mouse.tscn::PackedScene::4956594457923990343::1759266140::0::1::::<><><>0<>0<><>::uid://b07fnm6ct7j25::::res://prefabs/ai/enemy.gd<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn<>uid://d1hnotoinb77p::::res://prefabs/ai/mouse.png
+enemy.gd::GDScript::4207529341345088392::1759602010::0::1::::<>CharacterBody3D<><>0<>0<><>::
+football-mice.gd::GDScript::3450856168536638690::1759601929::0::1::::<>CharacterBody3D<><>0<>0<><>::
+football-mouse.png::CompressedTexture2D::3788720862803571237::1759266140::1759266412::1::::<><><>0<>0<>7daf7aaa423e32d822be4c8f7d737f8a<>res://.godot/imported/football-mouse.png-216937bf1b20b46688fae020ba2ee7bb.s3tc.ctex::
+footballmouse.tscn::PackedScene::2786811292519083487::1759602010::0::1::::<><><>0<>0<><>::uid://bpfvdkbk5e5oo::::res://prefabs/ai/football-mice.gd<>uid://bt8jxdahp1fk4::::res://prefabs/ai/football-mouse.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
+king-mouse.png::CompressedTexture2D::8661008345214306683::1759266140::1759266412::1::::<><><>0<>0<>24b9fc31b18f579db8564bcf98c85d91<>res://.godot/imported/king-mouse.png-e93c68af45603a9c48e0c3035cce9360.s3tc.ctex::
+mouse.png::CompressedTexture2D::8999437971919043879::1759266140::1759266412::1::::<><><>0<>0<>07eca149dec7374f65c23988e8db024c<>res://.godot/imported/mouse.png-101b2269bbee8ce4620db9a87729398e.s3tc.ctex::
+::res://prefabs/ai/boses/::1759601107
+mecha-mouse.gd::GDScript::8257381071540166910::1759600981::0::1::::<>CharacterBody3D<><>0<>0<><>::
+mecha-mouse.png::CompressedTexture2D::8401200861531027013::1759590736::1759590777::1::::<><><>0<>0<>069b9ef1aa29446052498f4d44bab3a9<>res://.godot/imported/mecha-mouse.png-b8d686522855782472968164a23f0d89.s3tc.ctex::
+mecha-mouse.tscn::PackedScene::6971935757073177148::1759601107::0::1::::<><><>0<>0<><>::uid://dpv64h70rii4u::::res://prefabs/ai/boses/mecha-mouse.gd<>uid://drxusyxas6dc4::::res://prefabs/ai/boses/mecha-mouse.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
+mouse-king.tscn::PackedScene::6215442606848410533::1759591346::0::1::::<><><>0<>0<><>::uid://b1aejudnhucun::::res://prefabs/ai/boses/mouse_king.gd<>uid://dvnpsou8wachf::::res://prefabs/ai/king-mouse.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
+mouse_king.gd::GDScript::4211590614100373037::1759591902::0::1::::<>CharacterBody3D<><>0<>0<><>::
+::res://prefabs/ai-spawner/::1759601888
+ai_spawner.gd::GDScript::1160580618000099100::1759601888::0::1::::<>Node3D<><>0<>0<><>::
+ai_spawner.tscn::PackedScene::7478593349308459211::1759592043::0::1::::<><><>0<>0<><>::uid://qsguf00ijo3e::::res://prefabs/ai-spawner/ai_spawner.gd
+::res://prefabs/cat/::1759266412
+cat.gd::GDScript::2974026964321855740::1759266140::0::1::::<>CharacterBody3D<><>0<>0<><>::
+cat.png::CompressedTexture2D::4658500617491702540::1759266140::1759266412::1::::<><><>0<>0<>1917f9c5dd64e874ea3a59d2c20c45ba<>res://.godot/imported/cat.png-986a726fa8e3c95c31c9814f51d57077.s3tc.ctex::
+cat.tscn::PackedScene::232175913967304633::1759266140::0::1::::<><><>0<>0<><>::uid://bimv131dxkbgm::::res://prefabs/cat/cat.gd<>uid://b7mu3bgkbh85e::::res://prefabs/cat/cat.png
+::res://prefabs/player/::1759592268
+ak.tscn::PackedScene::8875696901569065420::1759266140::0::1::::<><><>0<>0<><>::uid://4668kg7axe43::::res://assets/ak.png
+bazoka.tscn::PackedScene::5431882237196167850::1759266140::0::1::::<><><>0<>0<><>::uid://bv03i4mo2u66::::res://assets/rocket launcher.png
+pistol.tscn::PackedScene::8952051436586136058::1759266140::0::1::::<><><>0<>0<><>::uid://b0x3lyrcw3846::::res://assets/pistol.png
+player.gd::GDScript::8540288613318936098::1759592268::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player.tscn::PackedScene::8039091932781042660::1759266140::0::1::::<><><>0<>0<><>::uid://dtw8knnuyorqo::::res://prefabs/player/player.gd<>uid://cjnikox8ufr6a::::res://prefabs/player/bazoka.tscn<>uid://d0so8kaol16ne::::res://prefabs/player/pistol.tscn<>uid://dyppowqn37luy::::res://prefabs/player/ak.tscn
+::res://prefabs/shop/::1759602960
+shop.gd::GDScript::4373976660709859465::1759266140::0::1::::<>Node3D<><>0<>0<><>::
+shop.tscn::PackedScene::8136140994679920117::1759602960::0::1::::<><><>0<>0<><>::uid://b0x3lyrcw3846::::res://assets/pistol.png<>uid://b3k10ytw5i25b::::res://prefabs/shop/shop.gd<>uid://4668kg7axe43::::res://assets/ak.png<>uid://bv03i4mo2u66::::res://assets/rocket launcher.png<>uid://dchsfft8tmu2a::::res://assets/health.png<>uid://bhwi8e5a1m1n::::res://assets/lightning-item.png
+::res://prefabs/The chese/::1759266140
+the_chese.gd::GDScript::8426486054146790165::1759266140::0::1::::<>Area3D<><>0<>0<><>::
+the_chese.tscn::PackedScene::3748947044908835655::1759266140::0::1::::<><><>0<>0<><>::uid://dsb382jrt1l1v::::res://prefabs/The chese/the_chese.gd<>uid://bvud7ptfdcmfj::::res://assets/chese.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
+::res://screens/::1759601087
+game_over.tscn::PackedScene::7479537579057245470::1759600526::0::1::::<><><>0<>0<><>::
+title.tscn::PackedScene::6536689005446920091::1759601087::0::1::::<><><>0<>0<><>::
+::res://settings/::1759266140
+Global.gd::GDScript::1145696318048830242::1759266140::0::1::::<>Node<><>0<>0<><>::
+score_label.gd::GDScript::690774607827798615::1759266140::0::1::::<>Node<><>0<>0<><>::
+score_label.tscn::PackedScene::3030546794400919857::1759266140::0::1::::<><><>0<>0<><>::uid://j3u7seyqe8jb::::res://settings/score_label.gd
+world_time.gd::GDScript::3619971311386760293::1759266140::0::1::::<>Node3D<><>0<>0<><>::
+world_time.tscn::PackedScene::1052783820435610989::1759266140::0::1::::<><><>0<>0<><>::uid://brtsns2enhbxl::::res://settings/world_time.gd

@@ -5,7 +5,7 @@ var speed = 1.5
 var max_health = 100
 var health
 var dead 
-var score_gain = 100
+var money_gain = 10
 var can_attack = true
 @onready var healthbar = $SubViewport/healthbar3D
 var last_knockback
@@ -25,10 +25,10 @@ func _ready() -> void:
 
 func on_death():
 		$death_timer.start(0.5)
-		Global.score += score_gain
-		$score_label.visible = true; $score_label.text = "+ " + str(score_gain)
+		Global.money += money_gain
+		$score_label.visible = true; $score_label.text = "+ $" + str(money_gain)
 		dead = true
-		$"score_label/score-ani".play("dead")
+		$sprite/AnimationPlayer.play("dead")
 		$SubViewport/healthbar3D.visible = false
 		
 		velocity.y += 2
@@ -36,7 +36,7 @@ func on_death():
 
 
 func _physics_process(delta: float) -> void:
-	if health <= 0 and !dead:	
+	if health <= 0 and !dead:
 		on_death()
 
 	if not is_on_floor():
