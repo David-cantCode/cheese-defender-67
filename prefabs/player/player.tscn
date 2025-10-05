@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmsgw1ch1gxvo"]
+[gd_scene load_steps=11 format=3 uid="uid://dmsgw1ch1gxvo"]
 
 [ext_resource type="Script" uid="uid://dtw8knnuyorqo" path="res://prefabs/player/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://cjnikox8ufr6a" path="res://prefabs/player/bazoka.tscn" id="2_rdx4y"]
 [ext_resource type="PackedScene" uid="uid://d0so8kaol16ne" path="res://prefabs/player/pistol.tscn" id="2_wv1mm"]
 [ext_resource type="PackedScene" uid="uid://dyppowqn37luy" path="res://prefabs/player/ak.tscn" id="4_binfn"]
+[ext_resource type="PackedScene" uid="uid://dj2vtakuw5vgd" path="res://prefabs/player/jolt.tscn" id="5_klv5p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -82,10 +83,16 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.067218356, 0
 target_position = Vector3(0, 0, -1)
 
 [node name="pistol" parent="Head/Gun_pos" instance=ExtResource("2_wv1mm")]
+visible = false
 
 [node name="bazoka" parent="Head/Gun_pos" instance=ExtResource("2_rdx4y")]
+visible = false
 
 [node name="ak" parent="Head/Gun_pos" instance=ExtResource("4_binfn")]
+visible = false
+
+[node name="jolt" parent="Head/Gun_pos" instance=ExtResource("5_klv5p")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -0.14239264, -0.27952647)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

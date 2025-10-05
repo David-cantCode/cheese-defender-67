@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://tsd5r4llpitk"]
+[gd_scene load_steps=20 format=3 uid="uid://tsd5r4llpitk"]
 
 [ext_resource type="PackedScene" uid="uid://dmsgw1ch1gxvo" path="res://prefabs/player/player.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://cfwlr2br3gwyk" path="res://world.gd" id="1_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://bjgawsmam7kcf" path="res://settings/score_label.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://o88gwie5mrv6" path="res://settings/world_time.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://btoau0jo1i6g6" path="res://prefabs/The chese/the_chese.tscn" id="5_036b0"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://desxls3s8pnnv" path="res://prefabs/ai-spawner/ai_spawner.tscn" id="8_gbfbk"]
 [ext_resource type="Texture2D" uid="uid://8mwc7r3m3gt3" path="res://assets/bush.png" id="8_ioo17"]
 [ext_resource type="Texture2D" uid="uid://bp7fpht8fyibh" path="res://assets/moon.png" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://1rergwq4074v" path="res://prefabs/shop/lightning.tscn" id="10_wse8f"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ioo17"]
 
@@ -41,6 +43,7 @@ material = SubResource("StandardMaterial3D_f3sb7")
 size = Vector3(11.740017, 0.5135498, 16.395813)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_ic0uy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fj7yv")
@@ -590,3 +593,6 @@ texture = ExtResource("7_pkg7o")
 transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -0.12214756, 0.40012217, -11.593319)
 texture_filter = 0
 texture = ExtResource("7_pkg7o")
+
+[node name="Lightning" parent="." instance=ExtResource("10_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1995869, 10.640612, 0.9289789)

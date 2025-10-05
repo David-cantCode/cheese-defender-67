@@ -1,19 +1,141 @@
-[gd_scene format=3 uid="uid://c0eokvyegl8r4"]
+[gd_scene load_steps=14 format=3 uid="uid://c0eokvyegl8r4"]
+
+[ext_resource type="Script" uid="uid://b10byl7f1clj4" path="res://screens/title.gd" id="1_n5kc7"]
+[ext_resource type="Texture2D" uid="uid://bvud7ptfdcmfj" path="res://assets/chese.png" id="2_2a4c8"]
+[ext_resource type="Texture2D" uid="uid://dp06e67ashgl5" path="res://assets/git.png" id="3_42xm2"]
+[ext_resource type="Texture2D" uid="uid://bv4nvvslmqhhv" path="res://assets/itch.png" id="4_1ul6f"]
+
+[sub_resource type="FontVariation" id="FontVariation_2a4c8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tcn83"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2a4c8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42xm2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ul6f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hfxe"]
+
+[sub_resource type="Animation" id="Animation_42xm2"]
+resource_name = "spin"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chese:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_1ul6f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chese:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3hfxe"]
+_data = {
+&"RESET": SubResource("Animation_1ul6f"),
+&"spin": SubResource("Animation_42xm2")
+}
 
 [node name="Title" type="Node2D"]
+script = ExtResource("1_n5kc7")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 426.0
-offset_top = 91.0
-offset_right = 708.0
-offset_bottom = 186.0
+offset_left = 432.0
+offset_top = 59.0
+offset_right = 714.0
+offset_bottom = 154.0
 theme_override_font_sizes/font_size = 33
 text = "Cheese Defender 
 "
 
-[node name="Button" type="Button" parent="."]
-offset_left = 537.0
-offset_top = 383.0
-offset_right = 578.0
-offset_bottom = 414.0
-text = "Play"
+[node name="start" type="Button" parent="."]
+texture_filter = 1
+offset_left = 36.0
+offset_top = 271.0
+offset_right = 83.0
+offset_bottom = 302.0
+scale = Vector2(5.1411114, 3.88)
+theme_override_fonts/font = SubResource("FontVariation_2a4c8")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tcn83")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2a4c8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_42xm2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1ul6f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3hfxe")
+text = "Start Game"
+icon_alignment = 1
+
+[node name="Chese" type="Sprite2D" parent="."]
+position = Vector2(942.00006, 313)
+scale = Vector2(15, 15)
+texture = ExtResource("2_2a4c8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3hfxe")
+}
+
+[node name="github" type="Button" parent="."]
+texture_filter = 1
+offset_left = 1068.0
+offset_top = 578.0
+offset_right = 1082.6326
+offset_bottom = 594.31964
+scale = Vector2(5.1411114, 3.88)
+theme_override_fonts/font = SubResource("FontVariation_2a4c8")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tcn83")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2a4c8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_42xm2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1ul6f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3hfxe")
+icon = ExtResource("3_42xm2")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="itch" type="Button" parent="."]
+texture_filter = 1
+offset_left = 985.0
+offset_top = 578.0
+offset_right = 999.63257
+offset_bottom = 594.31964
+scale = Vector2(5.1411114, 3.88)
+theme_override_fonts/font = SubResource("FontVariation_2a4c8")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tcn83")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2a4c8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_42xm2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1ul6f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3hfxe")
+icon = ExtResource("4_1ul6f")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+zoom = Vector2(1.5, 1.5)
+
+[connection signal="button_down" from="start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="github" to="." method="_on_github_button_down"]
+[connection signal="button_down" from="itch" to="." method="_on_itch_button_down"]

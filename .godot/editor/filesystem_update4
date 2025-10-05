@@ -1,6 +1,8 @@
-res://world.tscn
-res://prefabs/ai-spawner/ai_spawner.gd
-res://prefabs/ai/football-mice.gd
-res://prefabs/ai/footballmouse.tscn
-res://prefabs/ai/enemy.gd
 res://prefabs/shop/shop.tscn
+res://screens/title.tscn
+res://screens/title.gd
+res://screens/game_over.tscn
+res://screens/game_over.gd
+res://world.gd
+res://world.tscn
+res://settings/world_time.gd

@@ -11,7 +11,7 @@ size = Vector3(0.6955185, 0.35536194, 0.6135502)
 viewport_path = NodePath("SubViewport")
 
 [node name="TheChese" type="Area3D"]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_ack2w")
 

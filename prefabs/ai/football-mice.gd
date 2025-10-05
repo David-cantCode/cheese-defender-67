@@ -1,11 +1,11 @@
 extends CharacterBody3D
 
 
-var speed = 2
+var speed = 2.4
 var max_health = 125
 var health
 var dead 
-var money_gain = 15
+var money_gain = randi_range(3,10)
 var can_attack = true
 @onready var healthbar = $SubViewport/healthbar3D
 var last_knockback
@@ -28,7 +28,7 @@ func on_death():
 		Global.money += money_gain
 		$score_label.visible = true; $score_label.text = "+ $" + str(money_gain)
 		dead = true
-		$"score_label/score-ani".play("dead")
+		$sprite/AnimationPlayer.play("dead")
 		$SubViewport/healthbar3D.visible = false
 		
 		velocity.y += 2

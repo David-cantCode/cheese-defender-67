@@ -13,6 +13,7 @@ var mice_spawned = 0
 var time_between_spawns
 var spawn_queue = []
 var speed_multiplier = 1.0
+var health_multiplyer  = 1.0
 
 signal boss_dead
 
@@ -28,8 +29,9 @@ func start_level(level: int) -> void:
 	mice_spawned = 0
 	
 	# Scale difficulty over time
-	speed_multiplier = 1.0 + (level - 1) * 0.1  # +10% speed each level
-	time_between_spawns = max(0.5, 2.0 - (level * 0.1))  # faster spawns
+	speed_multiplier = 1.0 + (level - 1) * 0.4 
+	health_multiplyer = 1.0 + (level - 1) * 0.4  
+	time_between_spawns = max(0.5, 3.0 - (level * 0.3))  # faster spawns
 	
 	# Pattern cycles between 3 types
 	match (level - 1) % 3:
@@ -58,7 +60,6 @@ func start_level(level: int) -> void:
 # BOSSES
 # -------------------------
 func spawn_boss(level: int) -> void:
-	Global.boss_fight_txt = true
 	var point = get_node(spawn_points.pick_random())
 	
 	if (level % 2) == 1:
@@ -100,7 +101,10 @@ func _on_spawn_timer_timeout() -> void:
 		enemy.global_position = point.global_position
 		add_child(enemy)
 		enemy.speed *= speed_multiplier
-	
+		enemy.max_health *=  health_multiplyer
+		enemy.health = enemy.max_health
+		enemy.healthbar.max_value = enemy.max_health
+		enemy.healthbar.value = enemy.health
 	mice_spawned += 1
 
 # -------------------------

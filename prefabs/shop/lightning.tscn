@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://1rergwq4074v"]
+
+[ext_resource type="Texture2D" uid="uid://badaookx65dpj" path="res://assets/lightning-strike.png" id="1_c4mc2"]
+[ext_resource type="Script" uid="uid://dxckidxuxbhco" path="res://prefabs/shop/lightning.gd" id="1_sc5u6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c4mc2"]
+radius = 0.26171875
+height = 2.1687012
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sc5u6"]
+radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sc5u6"]
+transparency = 1
+albedo_color = Color(0.50089526, 0.7396144, 1, 0.09019608)
+emission_enabled = true
+emission = Color(0.45840502, 0.45840508, 0.45840502, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vf3ck"]
+material = SubResource("StandardMaterial3D_sc5u6")
+
+[node name="Lightning" type="CharacterBody3D"]
+collision_layer = 0
+script = ExtResource("1_sc5u6")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2.247848, 0, 0, 0, 16.716318, 0, 0, 0, 1, 0, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_c4mc2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.084350586, 0)
+shape = SubResource("CapsuleShape3D_c4mc2")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7132797, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33345926, 0)
+shape = SubResource("SphereShape3D_sc5u6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.33128133, 0)
+mesh = SubResource("SphereMesh_vf3ck")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Area3D"]
+light_color = Color(0.31023675, 0.66578794, 0.9296925, 1)
+light_energy = 3.443

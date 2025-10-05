@@ -1,11 +1,11 @@
 extends CharacterBody3D
 
 
-var speed = 1.5
+var speed = 2
 var max_health = 100
 var health
 var dead 
-var money_gain = 10
+var money_gain = randi_range(1,5)
 var can_attack = true
 @onready var healthbar = $SubViewport/healthbar3D
 var last_knockback

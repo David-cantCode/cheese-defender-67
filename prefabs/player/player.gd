@@ -17,13 +17,14 @@ var instance
 
 
 var guns = []
-var gun_dmg = [10, 20, 50]
-var active_gun = 0 #point to guns array
+var gun_dmg = [20, 40, 70, 100]
+var active_gun = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	guns = [
+		$Head/Gun_pos/jolt,
 		$Head/Gun_pos/pistol,
 		$Head/Gun_pos/ak,
 		$Head/Gun_pos/bazoka
@@ -91,12 +92,17 @@ func store_check():
 			if collider.is_in_group("pistol"):
 				if Global.money >= 67:
 					Global.money -= 67
-					active_gun = 0
-			if collider.is_in_group("ak"):
-				if Global.money >= 670:
-					Global.money -= 670
 					active_gun = 1
-			if collider.is_in_group("bazoka"):
-				if Global.money >= 6700:
-					Global.money -= 6700
+			if collider.is_in_group("ak"):
+				if Global.money >= Global.ak_price:
+					Global.money -= Global.ak_price
 					active_gun = 2
+			if collider.is_in_group("bazoka"):
+				if Global.money >= Global.bazooka_price:
+					Global.money -= Global.bazooka_price
+					active_gun = 3
+			if collider.is_in_group("health"):
+				if Global.money >= 100:
+					Global.money -= 100
+					Global.chese_health += 50
+					

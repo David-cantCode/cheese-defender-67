@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://4668kg7axe43" path="res://assets/ak.png" id="2_m0hfw"]
 [ext_resource type="Texture2D" uid="uid://bv03i4mo2u66" path="res://assets/rocket launcher.png" id="3_sjbra"]
 [ext_resource type="Texture2D" uid="uid://dchsfft8tmu2a" path="res://assets/health.png" id="5_5iyum"]
-[ext_resource type="Texture2D" uid="uid://bhwi8e5a1m1n" path="res://assets/lightning-item.png" id="6_ptd7b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
 albedo_color = Color(0.4448557, 0.34304976, 0.26975346, 1)
@@ -21,6 +20,9 @@ material = SubResource("StandardMaterial3D_036b0")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_448sn"]
 size = Vector3(0.3835144, 0.70092773, 0.20495605)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ptd7b"]
+size = Vector3(0.2763672, 0.28881836, 0.15234375)
 
 [node name="shop" type="Node3D"]
 script = ExtResource("1_sjbra")
@@ -38,7 +40,7 @@ transform = Transform3D(0.23225765, 0, 0, 0, 1.3243446, 0, 0, 0, 0.26708987, 2.2
 mesh = SubResource("BoxMesh_aqk2v")
 
 [node name="top" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.779409, 0, 0, 0, 0.8339859, 0, 0, 0, 1.9727013, 0, 2.0779924, 0.32834435)
+transform = Transform3D(5.7794085, 0.00026885606, -0.00014750952, -0.0018630889, 0.83398587, 0.00021907392, 0.00043236004, -9.2596776e-05, 1.9727015, 0, 2.0779924, 0.32834435)
 mesh = SubResource("PrismMesh_036b0")
 
 [node name="money-ammnt" type="Label3D" parent="."]
@@ -85,7 +87,7 @@ shape = SubResource("BoxShape3D_448sn")
 
 [node name="Label3D" type="Label3D" parent="guns/ak"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3127443, 0.31137645, -0.15813494)
-text = "$670"
+text = "$200"
 
 [node name="bazoka" type="Area3D" parent="guns" groups=["bazoka"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72221714, 0.11731827, 0)
@@ -104,7 +106,7 @@ shape = SubResource("BoxShape3D_448sn")
 
 [node name="Label3D" type="Label3D" parent="guns/bazoka"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3127443, 0.31137645, -0.15813494)
-text = "$6700"
+text = "$400"
 
 [node name="Label3D" type="Label3D" parent="guns"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2671227, 1.2960253, -0.672305)
@@ -121,8 +123,10 @@ transform = Transform3D(-1.0000001, 0, -8.7422784e-08, 0, 1, 0, 8.7422784e-08, 0
 text = "Powers:
 "
 
-[node name="health" type="Area3D" parent="powers_"]
+[node name="health" type="Area3D" parent="powers_" groups=["health"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70529413, -0.1598314, 0)
+collision_layer = 4
+collision_mask = 0
 
 [node name="price" type="Label3D" parent="powers_/health"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.26120746, 0)
@@ -133,14 +137,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 texture_filter = 0
 texture = ExtResource("5_5iyum")
 
-[node name="lightning" type="Area3D" parent="powers_"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15190983, -0.1598314, 0)
-
-[node name="price" type="Label3D" parent="powers_/lightning"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.26120746, 0)
-text = "$100"
-
-[node name="Sprite3D" type="Sprite3D" parent="powers_/lightning"]
-transform = Transform3D(-1.3639941, 0, -1.3883354e-07, 0, 1.2791024, 0, 1.1924415e-07, 0, -1.5880705, 0, 0, 0)
-texture_filter = 0
-texture = ExtResource("6_ptd7b")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="powers_/health" groups=["health"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012207031, -0.011352539, 0.017578125)
+shape = SubResource("BoxShape3D_ptd7b")
