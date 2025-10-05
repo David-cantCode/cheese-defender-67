@@ -3,7 +3,7 @@ extends Node
 var ak_price = 200
 var bazooka_price = 400
 
-var score = 0
+var waves_passed = 0
 var money = 10000
 var chese_health = 100
 var game_over

@@ -8,7 +8,7 @@ var dead
 var money_gain = randi_range(1,5)
 var can_attack = true
 @onready var healthbar = $SubViewport/healthbar3D
-var last_knockback
+var last_knockback: Vector3 = Vector3.ZERO
 var dmg = 15
 @onready var target = get_node("../../TheChese")
 
@@ -46,7 +46,9 @@ func _physics_process(delta: float) -> void:
 	move_to_target(delta)
 		
 	move_and_slide()
-
+	
+	
+	if position.y <= -10: health = 0
 
 
 func hit(dmg, knockback):

@@ -1,16 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://tsd5r4llpitk"]
+[gd_scene load_steps=24 format=3 uid="uid://tsd5r4llpitk"]
 
 [ext_resource type="PackedScene" uid="uid://dmsgw1ch1gxvo" path="res://prefabs/player/player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://cfwlr2br3gwyk" path="res://world.gd" id="1_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://bjgawsmam7kcf" path="res://settings/score_label.tscn" id="3_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://o88gwie5mrv6" path="res://settings/world_time.tscn" id="4_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://lhkpqakeqfvo" path="res://assets/grass.png" id="3_wse8f"]
 [ext_resource type="PackedScene" uid="uid://btoau0jo1i6g6" path="res://prefabs/The chese/the_chese.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://dn6hb224v51dh" path="res://prefabs/shop/shop.tscn" id="5_dwbse"]
 [ext_resource type="Texture2D" uid="uid://bxj6lcj8y4u2w" path="res://assets/fence.png" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://desxls3s8pnnv" path="res://prefabs/ai-spawner/ai_spawner.tscn" id="8_gbfbk"]
 [ext_resource type="Texture2D" uid="uid://8mwc7r3m3gt3" path="res://assets/bush.png" id="8_ioo17"]
 [ext_resource type="Texture2D" uid="uid://bp7fpht8fyibh" path="res://assets/moon.png" id="9_ioo17"]
-[ext_resource type="PackedScene" uid="uid://1rergwq4074v" path="res://prefabs/shop/lightning.tscn" id="10_wse8f"]
+[ext_resource type="Texture2D" uid="uid://bbhe0gp2kjula" path="res://assets/house.png" id="11_k3n1d"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ioo17"]
 
@@ -31,7 +31,11 @@ sky = SubResource("Sky_tlwt5")
 ambient_light_source = 1
 ambient_light_color = Color(0.91163117, 0.54415274, 0.8376903, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ioo17"]
+albedo_color = Color(0.18335542, 0.28115448, 0.11604672, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_gv5m4"]
+material = SubResource("StandardMaterial3D_ioo17")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
 albedo_color = Color(0.11764706, 0.34509805, 1, 1)
@@ -41,6 +45,15 @@ material = SubResource("StandardMaterial3D_f3sb7")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fj7yv"]
 size = Vector3(11.740017, 0.5135498, 16.395813)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wse8f"]
+size = Vector3(7.830719, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ic0uy"]
+size = Vector3(1, 1, 9.715744)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k3n1d"]
+size = Vector3(5.943115, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ic0uy")
@@ -56,8 +69,16 @@ texture = ExtResource("9_ioo17")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment/moon"]
 transform = Transform3D(0.06666666, 0, 0, 0, -0.027850406, 0.060570613, 0, -0.060570613, -0.027850406, 0, 0, 0)
-light_energy = 0.511
-light_bake_mode = 1
+light_energy = 0.633
+light_indirect_energy = 16.0
+light_specular = 1.65
+shadow_enabled = true
+directional_shadow_split_1 = 1.0
+directional_shadow_split_2 = 1.0
+directional_shadow_split_3 = 1.0
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 6.9
 
 [node name="ground" type="Node3D" parent="."]
 
@@ -76,14 +97,29 @@ skeleton = NodePath("../MeshInstance3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0697994, -0.2432251, -7.6979065)
 shape = SubResource("BoxShape3D_fj7yv")
 
+[node name="grass" type="Node3D" parent="ground"]
+
+[node name="Sprite3D" type="Sprite3D" parent="ground/grass"]
+transform = Transform3D(-1.0177398, 0, 1.1019102, 0, 1.4999999, 0, -1.1019102, 0, -1.0177398, 0, 0.059704542, -10.710187)
+shaded = true
+texture_filter = 0
+texture = ExtResource("3_wse8f")
+hframes = 2
+vframes = 3
+
+[node name="Sprite3D2" type="Sprite3D" parent="ground/grass"]
+transform = Transform3D(0.25598496, 0, 1.4779959, 0, 1.4999999, 0, -1.4779959, 0, 0.25598496, 2.543139, 0.059704542, -0.8486187)
+shaded = true
+texture_filter = 0
+texture = ExtResource("3_wse8f")
+hframes = 2
+vframes = 3
+
 [node name="Player" parent="." instance=ExtResource("1_f3sb7")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.51433754, 0.51517355, 4.0989285)
 
-[node name="score-label" parent="." instance=ExtResource("3_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3579352, 0.21996707, 2.8105109)
-
-[node name="world time" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9856424, 0.18884695, 2.8447187)
+[node name="waves-label" parent="." instance=ExtResource("3_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6718836, 0.21996707, 2.8105109)
 
 [node name="shop" parent="." instance=ExtResource("5_dwbse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9565716)
@@ -594,5 +630,43 @@ transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -0
 texture_filter = 0
 texture = ExtResource("7_pkg7o")
 
-[node name="Lightning" parent="." instance=ExtResource("10_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1995869, 10.640612, 0.9289789)
+[node name="player_borders" type="Node3D" parent="."]
+
+[node name="blue thing" type="CharacterBody3D" parent="player_borders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.243423)
+collision_layer = 16
+collision_mask = 16
+
+[node name="blue" type="CollisionShape3D" parent="player_borders/blue thing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10447693, 0, 0)
+shape = SubResource("BoxShape3D_wse8f")
+
+[node name="walls-right" type="CollisionShape3D" parent="player_borders/blue thing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8282194, 0, -0.78012085)
+shape = SubResource("BoxShape3D_ic0uy")
+
+[node name="wallsleft" type="CollisionShape3D" parent="player_borders/blue thing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8518078, 0, 1.2976761)
+shape = SubResource("BoxShape3D_ic0uy")
+
+[node name="back" type="CollisionShape3D" parent="player_borders/blue thing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05981016, 0, 3.6108413)
+shape = SubResource("BoxShape3D_k3n1d")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 2.85758, 0.7188674, 11.641878)
+shaded = true
+texture_filter = 0
+texture = ExtResource("7_pkg7o")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -3.03712, 0.7188674, 11.641878)
+shaded = true
+texture_filter = 0
+texture = ExtResource("7_pkg7o")
+
+[node name="house" type="Sprite3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 2.7597234, 11.724981)
+shaded = true
+texture_filter = 0
+texture = ExtResource("11_k3n1d")

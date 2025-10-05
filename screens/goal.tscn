@@ -1,0 +1,155 @@
+[gd_scene load_steps=9 format=3 uid="uid://d21wuy8y8c1et"]
+
+[ext_resource type="Script" uid="uid://c8dxd853i7vc7" path="res://screens/goal.gd" id="1_kh06c"]
+[ext_resource type="FontFile" uid="uid://cr72r222wa5dt" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="2_ibdac"]
+[ext_resource type="Texture2D" uid="uid://ck1ug75vrwkfk" path="res://assets/black.png" id="2_oh1q4"]
+[ext_resource type="Texture2D" uid="uid://bp7fpht8fyibh" path="res://assets/moon.png" id="4_xwvff"]
+[ext_resource type="Texture2D" uid="uid://b7mu3bgkbh85e" path="res://prefabs/cat/cat.png" id="5_7thvr"]
+
+[sub_resource type="Animation" id="Animation_kh06c"]
+resource_name = "idle"
+length = 40.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 25.566668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cat:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 25.933332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_ibdac"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cat:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77l1m"]
+_data = {
+&"RESET": SubResource("Animation_ibdac"),
+&"idle": SubResource("Animation_kh06c")
+}
+
+[node name="Goal" type="Node2D"]
+script = ExtResource("1_kh06c")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(604, 286)
+scale = Vector2(80.3125, 49.34375)
+texture = ExtResource("2_oh1q4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 462.0
+offset_top = 10.0
+offset_right = 692.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 36
+text = "Objective:"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 70.0
+offset_top = 242.0
+offset_right = 546.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 26
+text = "Survive endless waves
+Upgrade your weapons 
+Defend the cheese!
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 792.0
+offset_top = 247.0
+offset_right = 1268.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 26
+text = "Note: Game was rushed
+due to deadline
+expect minor bugs.
+"
+
+[node name="mice wana" type="Label" parent="."]
+offset_left = 379.0
+offset_top = 58.0
+offset_right = 753.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 26
+text = "Mice want to eat your cheese"
+
+[node name="Label4" type="Label" parent="mice wana"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 41.0
+offset_right = 419.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0.8639762, 0.17827985, 0.3313665, 1)
+theme_override_fonts/font = ExtResource("2_ibdac")
+theme_override_font_sizes/font_size = 26
+text = "Eliminate them."
+
+[node name="e to continue" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 505.0
+offset_right = 755.0
+offset_bottom = 590.0
+theme_override_font_sizes/font_size = 36
+text = "(press e to continue)"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_77l1m")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(573, 328)
+
+[node name="moon" type="Sprite2D" parent="."]
+position = Vector2(916.99994, 112.999985)
+scale = Vector2(3.5600002, 3.240285)
+texture = ExtResource("4_xwvff")
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(126, 109.99999)
+scale = Vector2(2.9205635, 3.2025611)
+texture = ExtResource("5_7thvr")
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(573, 332)

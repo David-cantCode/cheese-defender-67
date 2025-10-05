@@ -10,12 +10,14 @@ config_version=5
 
 [application]
 
-config/name="cat thrower 67"
+config/name="cheese defender"
+config/version="1.0"
 run/main_scene="uid://ck8cmmubffbql"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+config/icon="uid://dh74b0xo022sh"
 
 [autoload]
 

@@ -14,7 +14,9 @@ func _ready() -> void:
 	$AnimationPlayer.play("spin")
 
 
-
+func _process(delta: float) -> void:
+	if !$music.playing:
+		$music.play()
 
 
 func _on_github_button_down() -> void:
@@ -26,4 +28,4 @@ func _on_itch_button_down() -> void:
 
 
 func _on_start_button_down() -> void:
-	emit_signal("scene_changed", "res://world.tscn")
+	emit_signal("scene_changed", "res://screens/goal.tscn")

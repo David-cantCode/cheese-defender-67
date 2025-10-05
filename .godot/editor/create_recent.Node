@@ -1,14 +1,14 @@
+Sprite3D
 Camera2D
-Timer
-AnimationPlayer
+AudioStreamPlayer2D
 Node3D
-OmniLight3D
-MeshInstance3D
+Sprite2D
+CharacterBody3D
 CollisionShape3D
 Area3D
-Sprite3D
-CharacterBody3D
-DirectionalLight3D
-Label3D
-Button
-Label
+AnimationPlayer
+AnimationTree
+Timer
+Label      - Matches the "text" keyword.
+OmniLight3D
+MeshInstance3D

@@ -56,9 +56,9 @@ func start_level(level: int) -> void:
 	Global.mice_left = spawn_queue.size()
 	spawn_timer.start(time_between_spawns)
 
-# -------------------------
-# BOSSES
-# -------------------------
+#*********************
+#*******BOSSES*********
+#***********************
 func spawn_boss(level: int) -> void:
 	var point = get_node(spawn_points.pick_random())
 	
@@ -81,9 +81,9 @@ func spawn_boss(level: int) -> void:
 		footballer.global_position = point.global_position
 		add_child(footballer)
 
-# -------------------------
-# TIMER LOOP
-# -------------------------
+#*********************
+#*******TIMER*********
+#***********************
 func _on_spawn_timer_timeout() -> void:
 	if Global.game_over:
 		spawn_timer.stop()
@@ -107,9 +107,7 @@ func _on_spawn_timer_timeout() -> void:
 		enemy.healthbar.value = enemy.health
 	mice_spawned += 1
 
-# -------------------------
-# BOSS DEATH
-# -------------------------
+
 func _on_boss_dead() -> void:
 	Global.level += 1
 	start_level(Global.level)

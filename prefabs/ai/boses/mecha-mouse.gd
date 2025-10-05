@@ -5,10 +5,10 @@ var speed = 2
 var max_health = 800 
 var health
 var dead 
-var score_gain = 100
+var money_gain = randi_range(5,15)
 var can_attack = true
 @onready var healthbar = $SubViewport/healthbar3D
-var last_knockback
+var last_knockback: Vector3 = Vector3.ZERO
 var dmg = 30
 @onready var target = get_node("../../TheChese")
 
@@ -25,15 +25,16 @@ func _ready() -> void:
 
 func on_death():
 		$death_timer.start(0.5)
-		Global.score += score_gain
-		$score_label.visible = true; $score_label.text = "+ " + str(score_gain)
+		Global.money += money_gain
+		Global.waves_passed += 1
+		$score_label.visible = true; $score_label.text = "+ $" + str(money_gain)
 		dead = true
 		$"score_label/score-ani".play("dead")
 		$SubViewport/healthbar3D.visible = false
 		
 		velocity.y += 2
 		velocity += last_knockback
-
+		
 
 func _physics_process(delta: float) -> void:
 	if health <= 0 and !dead:	
@@ -46,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	move_to_target(delta)
 		
 	move_and_slide()
-
+	if position.y <= -10: health = 0
 
 
 func hit(dmg, knockback):

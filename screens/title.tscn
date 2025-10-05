@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0eokvyegl8r4"]
+[gd_scene load_steps=17 format=3 uid="uid://c0eokvyegl8r4"]
 
 [ext_resource type="Script" uid="uid://b10byl7f1clj4" path="res://screens/title.gd" id="1_n5kc7"]
+[ext_resource type="FontFile" uid="uid://cr72r222wa5dt" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="2_1ul6f"]
 [ext_resource type="Texture2D" uid="uid://bvud7ptfdcmfj" path="res://assets/chese.png" id="2_2a4c8"]
+[ext_resource type="Texture2D" uid="uid://bkr40ec723ljs" path="res://assets/brown.png" id="2_3hfxe"]
 [ext_resource type="Texture2D" uid="uid://dp06e67ashgl5" path="res://assets/git.png" id="3_42xm2"]
 [ext_resource type="Texture2D" uid="uid://bv4nvvslmqhhv" path="res://assets/itch.png" id="4_1ul6f"]
-
-[sub_resource type="FontVariation" id="FontVariation_2a4c8"]
+[ext_resource type="AudioStream" uid="uid://2awsmcop1h5m" path="res://music/silly intro.wav" id="7_apaty"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tcn83"]
 
@@ -16,6 +17,21 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ul6f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hfxe"]
+
+[sub_resource type="Animation" id="Animation_1ul6f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chese:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_42xm2"]
 resource_name = "spin"
@@ -34,47 +50,40 @@ tracks/0/keys = {
 "values": [0.0, -6.283185307179586]
 }
 
-[sub_resource type="Animation" id="Animation_1ul6f"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Chese:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3hfxe"]
 _data = {
 &"RESET": SubResource("Animation_1ul6f"),
 &"spin": SubResource("Animation_42xm2")
 }
 
+[sub_resource type="FontVariation" id="FontVariation_2a4c8"]
+
 [node name="Title" type="Node2D"]
 script = ExtResource("1_n5kc7")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(389.99994, 389.00003)
+scale = Vector2(82.50001, 44.687504)
+texture = ExtResource("2_3hfxe")
+
 [node name="Label" type="Label" parent="."]
-offset_left = 432.0
-offset_top = 59.0
-offset_right = 714.0
-offset_bottom = 154.0
+offset_left = 368.0
+offset_top = 43.0
+offset_right = 757.0
+offset_bottom = 138.0
+theme_override_fonts/font = ExtResource("2_1ul6f")
 theme_override_font_sizes/font_size = 33
 text = "Cheese Defender 
 "
 
 [node name="start" type="Button" parent="."]
 texture_filter = 1
-offset_left = 36.0
-offset_top = 271.0
-offset_right = 83.0
-offset_bottom = 302.0
-scale = Vector2(5.1411114, 3.88)
-theme_override_fonts/font = SubResource("FontVariation_2a4c8")
+offset_left = 18.000002
+offset_top = 319.0
+offset_right = 176.0
+offset_bottom = 350.0
+scale = Vector2(4.458128, 3.3845215)
+theme_override_fonts/font = ExtResource("2_1ul6f")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tcn83")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_2a4c8")
@@ -135,6 +144,13 @@ expand_icon = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 zoom = Vector2(1.5, 1.5)
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(389.99994, 389.00003)
+scale = Vector2(82.50001, 44.687504)
+stream = ExtResource("7_apaty")
+autoplay = true
+playback_type = 1
 
 [connection signal="button_down" from="start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="github" to="." method="_on_github_button_down"]
