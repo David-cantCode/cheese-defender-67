@@ -1,5 +1,5 @@
-res://prefabs/ai/boses/mecha-mouse.tscn::0abf9778a956ca35bfd543d3d01862c3::1759601107::res://.godot/exported/133200997/export-82519b7e7c2759cd3d96e7b9f91f08c3-mecha-mouse.scn
-res://prefabs/ai/boses/mouse-king.tscn::dad7037877c262404326eb32e5d55c66::1759591346::res://.godot/exported/133200997/export-33750000fc20fd1f6055c35e41df8a6c-mouse-king.scn
+res://prefabs/ai/boses/mecha-mouse.tscn::260ee939ee4cf6786100131a6cdfc72f::1759670780::res://.godot/exported/133200997/export-82519b7e7c2759cd3d96e7b9f91f08c3-mecha-mouse.scn
+res://prefabs/ai/boses/mouse-king.tscn::dad7037877c262404326eb32e5d55c66::1759670732::res://.godot/exported/133200997/export-33750000fc20fd1f6055c35e41df8a6c-mouse-king.scn
 res://prefabs/ai/basic-mouse.tscn::5f52e4c8b6bcdbc2bf60e169c93100f9::1759266140::res://.godot/exported/133200997/export-f8171a82fe97acaaa94b135c0eab55db-basic-mouse.scn
 res://prefabs/ai/footballmouse.tscn::80f5564f1dd5a84bc86b37d3bbba9fde::1759602010::res://.godot/exported/133200997/export-b27c849165cc3791c41803f977585131-footballmouse.scn
 res://prefabs/ai-spawner/ai_spawner.tscn::4acdbd7afb113729965ba205a793be69::1759592043::res://.godot/exported/133200997/export-9156e4bacb78fceee1d598ff9113f151-ai_spawner.scn
@@ -8,14 +8,16 @@ res://prefabs/player/ak.tscn::82af583e3e1358ad1085e0bba89c90ca::1759266140::res:
 res://prefabs/player/bazoka.tscn::b5bbbac13e39148c6d5012e04310533c::1759266140::res://.godot/exported/133200997/export-4d01af5ed9492a08a741e8bda948b5dc-bazoka.scn
 res://prefabs/player/jolt.tscn::3d30c1171202c34e6460d844e5fcf1ec::1759610308::res://.godot/exported/133200997/export-fb348b9da76e89c01f49d5eebcb7c556-jolt.scn
 res://prefabs/player/pistol.tscn::8fc9294dd0199fe562ca7ef68d23c938::1759266140::res://.godot/exported/133200997/export-08a20845798a0138abe018ef5fa30dab-pistol.scn
-res://prefabs/player/player.tscn::d9cba5ab774292e9bdf5a502687b375f::1759609734::res://.godot/exported/133200997/export-d156c6252fc113d5b5eeb20ea5c938ab-player.scn
+res://prefabs/player/player.tscn::349334bcb8cb68b0afdc16805b71894a::1759671220::res://.godot/exported/133200997/export-d156c6252fc113d5b5eeb20ea5c938ab-player.scn
 res://prefabs/shop/lightning.tscn::cc48b284f0f350fead117b0a3d90312e::1759608673::res://.godot/exported/133200997/export-336cd8d42bd3fdbe2aacf4620b72e1d5-lightning.scn
 res://prefabs/shop/shop.tscn::228fbc709f7acaa9695b2d0272d88e6e::1759619881::res://.godot/exported/133200997/export-0252af0b9fbdcea69595f6278964cbf5-shop.scn
 res://prefabs/The chese/the_chese.tscn::3543561a2c856689f11c4d9ce304754b::1759606072::res://.godot/exported/133200997/export-b5fe063f7b6af89b818e8b9ce30dad36-the_chese.scn
 res://prefabs/healthbar.tscn::d32c410f0212a25a2212f440263fe586::1759266140::res://.godot/exported/133200997/export-7ea0547ce034d31176e17d8151ce725d-healthbar.scn
 res://screens/game_over.tscn::c19bfc176ffc65244a096c3d34fac285::1759622864::res://.godot/exported/133200997/export-482b0ce46940caef42db697b40854eac-game_over.scn
-res://screens/title.tscn::cf11b11a0503c8ca5a1150b59de03e78::1759622628::res://.godot/exported/133200997/export-79d8cec6992fa7ac26e9ecf532bc4526-title.scn
+res://screens/title.tscn::5aea847d306d6d5779be5a32ab0d7873::1759674368::res://.godot/exported/133200997/export-79d8cec6992fa7ac26e9ecf532bc4526-title.scn
 res://settings/Game-Manager.tscn::5fa6a784421a9774579e979e9229ca3f::1759607991::res://.godot/exported/133200997/export-f49912f749a6f85d1b63b96004048982-Game-Manager.scn
 res://settings/score_label.tscn::b9a1a068d3a694d701f6ce5f805c2c88::1759266140::res://.godot/exported/133200997/export-f01ea7ee415b8a62f931e5416666abe0-score_label.scn
 res://settings/world_time.tscn::ec67466dfef7259a94539f8e383297c5::1759266140::res://.godot/exported/133200997/export-c5d46ff0c36a5248d3e3fff977ab1de2-world_time.scn
-res://world.tscn::22e6a695e5aa952b8171bb97237ccf2f::1759622971::res://.godot/exported/133200997/export-76e0adcbc83681695885bae615f516ae-world.scn
+res://world.tscn::3b82ba36387701e9040d698109219748::1759677716::res://.godot/exported/133200997/export-76e0adcbc83681695885bae615f516ae-world.scn
+res://screens/goal.tscn::403a754ab349851e07d05fa4d56e0a6f::1759675891::res://.godot/exported/133200997/export-9a72aaa4e75e39c5324a0c823f4c2813-goal.scn
+res://screens/credits.tscn::1bae095c0b7a14b986f3542d709d54f3::1759675891::res://.godot/exported/133200997/export-e9b86d25509dfb3e61181e42b05433ad-credits.scn

@@ -1,10 +1,10 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1759676185
-export_presets.cfg::TextFile::-1::1759623497::0::1::::<><><>0<>0<><>::
+::res://::1759677925
+export_presets.cfg::TextFile::-1::1759677925::0::1::::<><><>0<>0<><>::
 README.md::TextFile::-1::1759605450::0::1::::<><><>0<>0<><>::
 world.gd::GDScript::5169901562067833442::1759622372::0::1::::<>Node3D<><>0<>0<><>::
-world.tscn::PackedScene::1370983491702506872::1759676185::0::1::::<><><>0<>0<><>::uid://dmsgw1ch1gxvo::::res://prefabs/player/player.tscn<>uid://cfwlr2br3gwyk::::res://world.gd<>uid://bjgawsmam7kcf::::res://settings/score_label.tscn<>uid://lhkpqakeqfvo::::res://assets/grass.png<>uid://btoau0jo1i6g6::::res://prefabs/The chese/the_chese.tscn<>uid://dn6hb224v51dh::::res://prefabs/shop/shop.tscn<>uid://bxj6lcj8y4u2w::::res://assets/fence.png<>uid://desxls3s8pnnv::::res://prefabs/ai-spawner/ai_spawner.tscn<>uid://8mwc7r3m3gt3::::res://assets/bush.png<>uid://bp7fpht8fyibh::::res://assets/moon.png
-::res://assets/::1759677369
+world.tscn::PackedScene::1370983491702506872::1759677716::0::1::::<><><>0<>0<><>::uid://dmsgw1ch1gxvo::::res://prefabs/player/player.tscn<>uid://cfwlr2br3gwyk::::res://world.gd<>uid://bjgawsmam7kcf::::res://settings/score_label.tscn<>uid://lhkpqakeqfvo::::res://assets/grass.png<>uid://btoau0jo1i6g6::::res://prefabs/The chese/the_chese.tscn<>uid://dn6hb224v51dh::::res://prefabs/shop/shop.tscn<>uid://bxj6lcj8y4u2w::::res://assets/fence.png<>uid://desxls3s8pnnv::::res://prefabs/ai-spawner/ai_spawner.tscn<>uid://8mwc7r3m3gt3::::res://assets/bush.png<>uid://bp7fpht8fyibh::::res://assets/moon.png<>uid://bbhe0gp2kjula::::res://assets/house.png
+::res://assets/::1759677431
 ak.png::CompressedTexture2D::2101413869810585278::1759266140::1759266412::1::::<><><>0<>0<>3ff324944788fb2432e6690de37c1e13<>res://.godot/imported/ak.png-3c65bfa7eae24f574cb40191feb885a7.s3tc.ctex::
 background.jpg::CompressedTexture2D::1587618345462462192::1759605269::1759605308::1::::<><><>0<>0<>749834f6679c99b58e8ac0ba0dff4c7f<>res://.godot/imported/background.jpg-3c1ee7bbff6a1283595ccc69bb1d6acd.s3tc.ctex::
 black.png::CompressedTexture2D::5529630408059913916::1759671966::1759677431::1::::<><><>0<>0<>ef89b1f0e491478885271c2ad80ad7c5<>res://.godot/imported/black.png-0c928088330c4cddf9e28b960b6ccae3.s3tc.ctex::
@@ -24,7 +24,12 @@ lightning-strike.png::CompressedTexture2D::2392639569932519379::1759606315::1759
 moon.png::CompressedTexture2D::3505644196787643577::1759604270::1759604522::1::::<><><>0<>0<>abdc301f9742d7e6dab7135b425cb469<>res://.godot/imported/moon.png-e4c6172be07b31c7ae536c1ad9030dad.s3tc.ctex::
 pistol.png::CompressedTexture2D::4190343469461188797::1759266140::1759266412::1::::<><><>0<>0<>4441826df6fc1a93aa83cf0c536e1896<>res://.godot/imported/pistol.png-25ad999fb244d6e6522163977fe47a51.s3tc.ctex::
 rocket launcher.png::CompressedTexture2D::115109169072934789::1759266140::1759266412::1::::<><><>0<>0<>94314da80b803b4251282edacde3bc80<>res://.godot/imported/rocket launcher.png-3320095af6b6d5b32b328a70d3d55529.s3tc.ctex::
-::res://export/::1759623617
+::res://export/::1759677915
+::res://export/html/::1759677931
+cheese defender.apple-touch-icon.png::CompressedTexture2D::4990668895835911536::1759677931::1759677967::1::::<><><>0<>0<>6341cee57da6b95f3d5232dcaefde0d8<>res://.godot/imported/cheese defender.apple-touch-icon.png-8f80ec06f6280805ba5987f9c86d3b33.ctex::
+cheese defender.icon.png::CompressedTexture2D::1458911769475488523::1759677931::1759677967::1::::<><><>0<>0<>9d4bfdf4035dceab57f758b4ede5a7a0<>res://.godot/imported/cheese defender.icon.png-112efd8952788fe52675a0e89702944e.ctex::
+cheese defender.png::CompressedTexture2D::4197622166084646091::1759677931::1759677967::1::::<><><>0<>0<>cb95b0c8f1922381f67e28ead4386efc<>res://.godot/imported/cheese defender.png-06e1d0b3ec960c659484065e0152ac69.ctex::
+::res://export/windows/::1759677930
 ::res://font/::1759671496
 PixelatedEleganceRegular-ovyAA.ttf::FontFile::6033782975760106993::1759671496::1759671496::1::::<><><>0<>0<>affb82e199d6568fed78de5043cdd038<>res://.godot/imported/PixelatedEleganceRegular-ovyAA.ttf-236db4b8647fa0b6d2b0b6179642e25c.fontdata::
 ::res://music/::1759674218
@@ -45,8 +50,8 @@ mecha-mouse.png::CompressedTexture2D::8401200861531027013::1759590736::175959077
 mecha-mouse.tscn::PackedScene::6971935757073177148::1759670780::0::1::::<><><>0<>0<><>::uid://dpv64h70rii4u::::res://prefabs/ai/boses/mecha-mouse.gd<>uid://drxusyxas6dc4::::res://prefabs/ai/boses/mecha-mouse.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
 mouse-king.tscn::PackedScene::6215442606848410533::1759670732::0::1::::<><><>0<>0<><>::uid://b1aejudnhucun::::res://prefabs/ai/boses/mouse_king.gd<>uid://dvnpsou8wachf::::res://prefabs/ai/king-mouse.png<>uid://bn5ogpawo41p1::::res://prefabs/healthbar.tscn
 mouse_king.gd::GDScript::4211590614100373037::1759676162::0::1::::<>CharacterBody3D<><>0<>0<><>::
-::res://prefabs/ai-spawner/::1759610621
-ai_spawner.gd::GDScript::1160580618000099100::1759610621::0::1::::<>Node3D<><>0<>0<><>::
+::res://prefabs/ai-spawner/::1759677711
+ai_spawner.gd::GDScript::1160580618000099100::1759677711::0::1::::<>Node3D<><>0<>0<><>::
 ai_spawner.tscn::PackedScene::7478593349308459211::1759592043::0::1::::<><><>0<>0<><>::uid://qsguf00ijo3e::::res://prefabs/ai-spawner/ai_spawner.gd
 ::res://prefabs/cat/::1759266412
 cat.gd::GDScript::2974026964321855740::1759266140::0::1::::<>CharacterBody3D<><>0<>0<><>::
